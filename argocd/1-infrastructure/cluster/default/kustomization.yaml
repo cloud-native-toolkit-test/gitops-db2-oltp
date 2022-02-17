@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - base/cpd-operators-ibm-entitlement-key.yaml
   - base/ibm-common-services-ibm-entitlement-key.yaml
-  - base/namespace-gitops-db2-oltp.yaml
