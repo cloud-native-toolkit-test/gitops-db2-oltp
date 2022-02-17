@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-db2-oltp-ibm-cpd-db2-instance
+spec:
+  destination:
+    namespace: gitops-db2-oltp
+    server: https://kubernetes.default.svc
+  project: 2-services
+  source:
+    path: payload/2-services/namespace/gitops-db2-oltp/ibm-cpd-db2-instance
+    repoURL: https://github.com/cloud-native-toolkit-test/gitops-db2-oltp
+    targetRevision: main
+    helm:
+      releaseName: ibm-cpd-db2-instance
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences: []
